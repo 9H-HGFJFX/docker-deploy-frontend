@@ -40,6 +40,16 @@ jobs:
           context: .
           push: true
           tags: liuxinyi20232086/234-deploylab-frontend:latest
+          
+      - 
+        name: Check source file existence
+        run: |
+          # 列出当前目录文件，确认仓库根目录结构
+          ls -l
+          # 假设要拷贝的文件在 src 目录下的 docker-compose.yml，检查该目录
+          ls -l src/
+          # 用 find 全局搜索，确保能定位到文件
+          find . -name "docker-compose.yml"
 
       - 
         name: copy file via ssh password
