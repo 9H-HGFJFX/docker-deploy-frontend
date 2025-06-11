@@ -2,3 +2,9 @@ version = 1
 
 [[analyzers]]
 name = "docker"
+
+  [analyzers.meta]
+  dockerfile_paths = [
+    "version = 1  [[analyzers]] name = \"docker\" # 如果你有多个 Dockerfile，填数组，比如 [\"Dockerfile\"",
+    "\"build/Dockerfile.prod\"] custom_dockerfile_paths = [\"Dockerfile\"]    [[analyzers]] name = \"javascript\" # 扫描 src 目录下的代码（根据你实际代码位置调整） paths = [\"src\"]   # 排除测试 mock 文件（可选） excluded_paths = [\"src/__mocks__/**\"]"
+  ]
